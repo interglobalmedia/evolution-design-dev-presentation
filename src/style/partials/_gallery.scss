@@ -1,5 +1,38 @@
 // Gallery
 
+.gallery-container {
+    padding: 0.9375rem 0;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+}
+
+.gallery-grid img {
+    width: 100%;
+    display: block;
+}
+
+@media (min-width: 320px) {
+    .gallery-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (min-width: 544px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 960px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 .gallery-grid div {
     position: relative;
     cursor: pointer;
@@ -30,12 +63,95 @@
     left: 0;
 }
 
+// Modal
+
+.modal-overlay {
+    position: fixed;
+    zIndex: 1;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    top: 0;
+    left: 0;
+}
+
+.modal {
+    position: fixed;
+    z-index: 999;
+    width: 50%;
+    max-width: 800px;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+}
+
+.modal img {
+    width: 100%;
+    border: 5px solid #8b3a62;
+}
+
+@media (min-width: 320px) {
+    .modal {
+        width: 95%;
+    }
+}
+
+@media (min-width: 544px) {
+    .modal {
+        width: 80%;
+    }
+}
+
+@media (min-width: 960px) {
+    .modal {
+        width: 60%;
+    }
+}
+
 // Modal-body animation
 
 .modal-body {
     animation-name: zoom;
     animation-duration: 1s;
     transition: 1s height ease;
+    position: relative;
+}
+
+.modal-body a {
+    position: absolute;
+    display: inline;
+    color: orange;
+    text-decoration: none;
+    line-height: 36px;
+    font-size: 30px;
+    font-weight: lighter;
+    background: #8b3a62;
+    border-radius: 5px;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+}
+
+.modal-body .modal-close {
+    right: 0;
+    top: 0;
+    border-radius: 0 0 0 5px;
+}
+
+.modal-body .modal-next,
+.modal-body .modal-prev {
+    right: 0;
+    top: calc(50% - 25px);
+    border-radius: 5px 0 0 5px;
+    height: 50px;
+    line-height: 40px;
+    font-size: 60px;
+}
+
+.modal-body .modal-prev {
+    left: 0;
+    right: auto;
+    border-radius: 0 5px 5px 0;
 }
 
 @keyframes zoom {

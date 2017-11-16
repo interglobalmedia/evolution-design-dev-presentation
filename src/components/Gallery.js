@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import GalleryModal from './GalleryModal';
-import Radium from 'radium';
 
 const imgUrls = [
 	'https://source.unsplash.com/jdFscnVoDxw/800x600',
@@ -22,13 +21,9 @@ class Gallery extends Component {
 		currentIndex: null
 	};
 	renderImageContent(src, index) {
-		const imgStyle = {
-			width: '100%',
-			display: 'block'
-		}
 		return (
 			<div key={src} onClick={(e) => this.openModal(e, index)}>
-				<img style={imgStyle} src={src}/>
+				<img src={src}/>
 			</div>
 		)
 	}
@@ -68,33 +63,10 @@ class Gallery extends Component {
 		}
 	}
 	render() {
-		const galleryContainerStyle = {
-			padding: '0.9375rem 0'
-		}
-		const galleryGridStyle = {
-			display: 'grid',
-			gridTemplateColumns: 'repeat(3, 1fr)',
-			width: '100%'
-		}
-		const mediaMin320StyleGTC = {
-			'@media (min-width: 320px)': {
-				gridTemplateColumns: 'repeat(1, 1fr)'
-			}
-		}
-		const mediaMin544StyleGTC = {
-			'@media (min-width: 544px)': {
-				gridTemplateColumns: 'repeat(2, 1fr)'
-			}
-		}
-		const mediaMin960StyleGTC = {
-			'@media (min-width: 960px)': {
-				gridTemplateColumns: 'repeat(3, 1fr)'
-			}
-		}
 		return (
-			<div className='gallery-container' style={galleryContainerStyle}>
+			<div className='gallery-container'>
 				<header><div data-text='What a Sizzler!' className='title'></div></header>
-				<div className='gallery-grid' style={[galleryGridStyle, mediaMin320StyleGTC, mediaMin544StyleGTC, mediaMin960StyleGTC]}>
+				<div className='gallery-grid'>
 					{imgUrls.map(this.renderImageContent.bind(this))}
 				</div>
 				<GalleryModal
@@ -110,4 +82,4 @@ class Gallery extends Component {
 	}
 }
 
-export default Radium(Gallery);
+export default Gallery;
