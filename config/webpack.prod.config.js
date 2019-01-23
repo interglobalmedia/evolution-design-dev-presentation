@@ -8,7 +8,7 @@ const Visualizer = require('webpack-visualizer-plugin');
 
 const baseConfig = require('./webpack.base.config');
 
-const prodConfiguration = env =>
+const prodConfiguration = env => {
     merge([
         {
             optimization: {
@@ -47,5 +47,6 @@ const prodConfiguration = env =>
                 ]
             }
     ])
+}
 
 module.exports = env => merge(baseConfig(env), prodConfiguration(env));
