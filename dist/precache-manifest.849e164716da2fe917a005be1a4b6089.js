@@ -1,10 +1,10 @@
 self.__precacheManifest = [
   {
-    "url": "styles/main.62272f5c247b7d1f52ab.css"
+    "url": "styles/main.c5596fd6695710bbd4b1.css"
   },
   {
-    "revision": "a3790d05ab8bdd8e5efc",
-    "url": "scripts/main.b312fbffe8367c6f7220.chunk.js"
+    "revision": "bfd2df6a176e3f108c0c",
+    "url": "scripts/main.196a981709399486552e.chunk.js"
   },
   {
     "revision": "5e1265fa53c5e11e21f1",
@@ -47,10 +47,7 @@ self.__precacheManifest = [
     "url": "images/sammy_leigh_scholl_157431_unsplash.fec695a0c736b0938117566dd9172f70.jpg"
   },
   {
-    "url": "src/favicon.2cc0ddfdc87f52e9d8c0c7d5b6efbebe.ico"
-  },
-  {
-    "revision": "1ace8ad2f74bf9fb75b8ec015065c6dc",
+    "revision": "e2141d0b0a07c9f037cb3552a61e89ed",
     "url": "index.html"
   }
 ];
